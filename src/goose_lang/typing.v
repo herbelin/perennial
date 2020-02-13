@@ -492,8 +492,8 @@ Bind Scope heap_type with ty.
 
 Notation "Γ ⊢ e : A" := (expr_hasTy Γ%ht e A%ht) : heap_types.
 Notation "Γ ⊢v v : A" := (val_hasTy Γ%ht v A%ht) : heap_types.
-Notation "⊢ v : A" := (base_lit_hasTy v%V A%ht) (at level 90, only printing) : heap_types.
-Notation "⊢ e : A" := (val_hasTy ∅ e%V A%ht) (at level 90, e at next level, A at next level) : heap_types.
+Notation "⊢ v : A" := (base_lit_hasTy v%V A%ht) (at level 90, v at next level, only printing) : heap_types.
+Notation "⊢ e : A" := (val_hasTy ∅ e%V A%ht) (at level 90, e at next level, A at next level, only parsing) : heap_types.
 
 Theorem insert_anon `{ext_ty: ext_types} t : (<[BAnon := t]> : Ctx -> Ctx) = (fun Γ => Γ).
 Proof.
